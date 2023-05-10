@@ -46,6 +46,11 @@ body {
         &-link {
           font-family: $open;
           font-weight: $med;
+
+          &:hover {
+            color: $bright-blue;
+          }
+
         }
       }
     }
@@ -84,6 +89,10 @@ body {
         -o-border-radius: 5px;
         border-radius: 5px;
         margin-bottom: 6rem;
+
+        &:hover {
+          @include enlightnen;
+        }
       }
     }
   }
@@ -129,8 +138,13 @@ body {
       font-weight: $med;
       @include flexCenter;
 
+
       &_icon {
         margin-left: 0.5rem;
+      }
+
+      &:hover {
+        @include enlightnen;
       }
     }
 
@@ -192,6 +206,10 @@ body {
       -ms-border-radius: 3px;
       -o-border-radius: 3px;
       border-radius: 3px;
+
+      &:hover {
+        @include enlightnen;
+      }
     }
   }
 }
@@ -229,6 +247,10 @@ body {
 
         &-link {
           padding-bottom: 1rem;
+
+          &:hover {
+            color: $bright-blue;
+          }
         }
       }
 
@@ -237,6 +259,10 @@ body {
 
         &-link {
           padding-bottom: 1rem;
+
+          &:hover {
+            color: $bright-blue;
+          }
         }
       }
     }
@@ -254,6 +280,11 @@ body {
         -o-border-radius: 5rem;
         border-radius: 5rem;
         @include colCenter;
+
+        &:hover {
+          color: $bright-blue;
+          border-color: $bright-blue;
+        }
 
         &-icon {}
 

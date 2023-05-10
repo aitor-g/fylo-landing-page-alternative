@@ -39,6 +39,9 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
+.header__nav-ul_li-link:hover {
+  color: hsl(224, 93%, 58%);
+}
 
 .intro__info-title {
   line-height: 1.5;
@@ -71,6 +74,10 @@ body {
   border-radius: 5px;
   margin-bottom: 6rem;
 }
+.intro__info-form_submit:hover {
+  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5);
+}
 
 .section__curve-desktop {
   width: 100%;
@@ -101,6 +108,10 @@ body {
 }
 .testimonials__info-link_icon {
   margin-left: 0.5rem;
+}
+.testimonials__info-link:hover {
+  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5);
 }
 .testimonials__info-testimonial {
   background-color: hsl(0, 100%, 100%);
@@ -148,6 +159,10 @@ body {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
+.access__form-submit:hover {
+  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5);
+}
 
 .footer {
   background-color: hsl(243, 87%, 12%);
@@ -174,11 +189,17 @@ body {
 .footer__linksbox-navlinks_start-link {
   padding-bottom: 1rem;
 }
+.footer__linksbox-navlinks_start-link:hover {
+  color: hsl(224, 93%, 58%);
+}
 .footer__linksbox-navlinks_end {
   padding-bottom: 2.5rem;
 }
 .footer__linksbox-navlinks_end-link {
   padding-bottom: 1rem;
+}
+.footer__linksbox-navlinks_end-link:hover {
+  color: hsl(224, 93%, 58%);
 }
 .footer__linksbox-smlinks {
   display: flex;
@@ -196,6 +217,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.footer__linksbox-smlinks_frame:hover {
+  color: hsl(224, 93%, 58%);
+  border-color: hsl(224, 93%, 58%);
 }
 .footer__linksbox-smlinks_frame .fa-facebook-f {
   font-size: 0.85rem;
