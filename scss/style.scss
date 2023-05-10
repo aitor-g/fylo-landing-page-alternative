@@ -1,0 +1,783 @@
+@use '../scss' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                   RESETS                                   */
+/* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    BODY                                    */
+/* -------------------------------------------------------------------------- */
+body {
+  font-family: $raleway;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   GENERAL                                  */
+/* -------------------------------------------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    &-img {}
+  }
+
+  &__nav {
+    &-ul {
+      &_li {
+        display: inline;
+
+        &-link {
+          font-family: $open;
+          font-weight: $med;
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  &__image {
+    &-img {}
+  }
+
+  &__info {
+    &-title {
+      line-height: 1.5;
+    }
+
+    &-description {
+      font-weight: $reg;
+    }
+
+    &-form {
+      &_email {
+        @include emailField;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+      &_submit {
+        @include submitButton;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}
+
+.section {
+  &__curve {
+    &-desktop {
+      width: 100%;
+      height: auto;
+    }
+
+    &-mobile {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.testimonials {
+  background-color: $light-grayish-blue;
+
+  &__image {
+
+    &-img {}
+  }
+
+  &__info {
+
+    &-title {
+      font-family: $open;
+    }
+
+    &-description {
+      text-align: left;
+    }
+
+    &-link {
+      width: fit-content;
+      color: $moderate-cyan;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid $moderate-cyan;
+      font-weight: $med;
+      @include flexCenter;
+
+      &_icon {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &-testimonial {
+      background-color: $white;
+      box-shadow: 0 0 5px 5px rgba($black, 0.05);
+
+      &_img {}
+
+      &_text {}
+
+      &_author {
+        @include flexCenter;
+
+        &-avatar {
+          -webkit-border-radius: 3rem;
+          -moz-border-radius: 3rem;
+          -ms-border-radius: 3rem;
+          -o-border-radius: 3rem;
+          border-radius: 3rem;
+        }
+
+        &-namebox {
+          &_name {}
+
+          &_role {}
+        }
+      }
+    }
+  }
+}
+
+.access {
+  background-color: $desaturated-blue;
+  color: $white;
+
+  &__info {
+    &-title {
+      font-family: $open;
+    }
+
+    &-description {}
+  }
+
+  &__form {
+    &-email {
+      @include emailField;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+    &-submit {
+      @include submitButton;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.footer {
+  background-color: $very-dark-blue;
+  color: $white;
+
+  &__image {
+    &-img {
+      filter: contrast(50%) brightness(500%);
+      -webkit-filter: contrast(50%) brightness(500%);
+    }
+  }
+
+  &__linksbox {
+    &-contactlinks {
+      margin-bottom: 3rem;
+
+      &_contact {
+        @include flexCenter;
+        margin-bottom: 1rem;
+
+        &-icon {}
+
+        &-info {
+          display: inline;
+        }
+      }
+    }
+
+    &-navlinks {
+      &_start {
+        padding-bottom: 2.5rem;
+
+        &-link {
+          padding-bottom: 1rem;
+        }
+      }
+
+      &_end {
+        padding-bottom: 2.5rem;
+
+        &-link {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+
+    &-smlinks {
+      display: flex;
+
+      &_frame {
+        width: 30px;
+        height: 30px;
+        border: 1px solid $white;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        -ms-border-radius: 5rem;
+        -o-border-radius: 5rem;
+        border-radius: 5rem;
+        @include colCenter;
+
+        &-icon {}
+
+        .fa-facebook-f {
+          font-size: 0.85rem;
+        }
+
+        .fa-twitter {
+          font-size: 0.75rem;
+        }
+
+        .fa-instagram {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   MOBILE                                   */
+/* -------------------------------------------------------------------------- */
+@include onMobile {
+
+  header,
+  section,
+  footer {
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    margin-top: 1.5rem;
+    margin-bottom: 5.5rem;
+
+    &__logo {
+      &-img {
+        width: 85px;
+        height: auto;
+      }
+    }
+
+    &__nav {
+      &-ul {
+        &_li {
+          margin-left: 1.2rem;
+
+          &-link {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+
+  .intro {
+    text-align: center;
+
+    &__image {
+      margin-bottom: 2.5rem;
+
+      &-img {
+        width: 300px;
+        height: auto;
+      }
+    }
+
+    &__info {
+      &-title {
+        margin-bottom: 1.5rem;
+      }
+
+      &-description {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      &-form {
+        @include colCenter;
+
+        &_email {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          margin-bottom: 1rem;
+        }
+
+        &_submit {
+          width: 100%;
+          padding: 0.75rem 0;
+        }
+      }
+    }
+  }
+
+  .section {
+    &__curve {
+      &-desktop {
+        display: none;
+      }
+
+      &-mobile {
+        margin-bottom: -5px;
+      }
+    }
+  }
+
+  .testimonials {
+    padding-bottom: 5rem;
+
+    &__image {
+      display: flex;
+      justify-content: center;
+
+      &-img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 5rem;
+      }
+    }
+
+    &__info {
+      &-title {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      &-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+      }
+
+      &-link {
+        font-size: 0.8rem;
+        margin: 2.5rem auto 2rem;
+
+        &_icon {
+          padding-top: 0.15rem;
+        }
+      }
+
+      &-testimonial {
+        width: 280px;
+        height: 170px;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1.5rem;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+
+        &_img {
+          margin-bottom: 0.5rem;
+        }
+
+        &_text {
+          font-size: 0.67rem;
+          margin-bottom: 0.5rem;
+          line-height: 1.6;
+        }
+
+        &_author {
+          &-avatar {
+            width: 25px;
+            height: 25px;
+            margin-right: 0.5rem;
+          }
+
+          &-namebox {
+            &_name {
+              font-size: 0.6rem;
+            }
+
+            &_role {
+              font-size: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .access {
+    padding: 3rem 2rem 4rem;
+
+    &__info {
+      text-align: center;
+      @include colCenter;
+
+      &-title {
+        font-size: 1.05rem;
+        letter-spacing: 0.02rem;
+        margin-bottom: 1.2rem;
+      }
+
+      &-description {
+        width: 90%;
+        font-size: 0.85rem;
+        word-spacing: 0.07rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__form {
+      @include colCenter;
+
+      &-email {
+        width: 80%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      &-submit {
+        width: 80%;
+        padding: 0.5rem 0;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .footer {
+    padding: 4rem 2.5rem 3rem;
+
+    &__image {
+      margin-bottom: 2rem;
+
+      &-img {}
+    }
+
+    &__linksbox {
+      &-contactlinks {
+        &_contact {
+          &-icon {
+            margin-right: 1rem;
+          }
+
+          &-info {}
+        }
+      }
+
+      &-navlinks {
+        &_start {
+          &-link {}
+        }
+
+        &_end {
+          &-link {}
+        }
+      }
+
+      &-smlinks {
+        justify-content: center;
+
+        &_frame {
+          margin: 0 0.35rem;
+
+          &-icon {}
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   DESKTOP                                  */
+/* -------------------------------------------------------------------------- */
+@include onDesktop {
+
+  header,
+  section,
+  footer {
+    padding: 0 5rem;
+  }
+
+  .header {
+    padding-top: 4rem;
+
+    &__logo {
+      &-img {}
+    }
+
+    &__nav {
+      &-ul {
+        &_li {
+          margin-left: 3.2rem;
+
+          &-link {}
+        }
+      }
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+
+    &__image {
+      width: 50%;
+
+      &-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__info {
+      width: 50%;
+
+      &-title {
+        font-family: $open;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      &-description {
+        width: 95%;
+        font-weight: $med;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+      }
+
+      &-form {
+        &_email {
+          width: 52.5%;
+          margin-right: 0.75rem;
+          padding: 1rem 0 1rem 1rem;
+        }
+
+        &_submit {
+          width: 32.5%;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+
+  .section {
+    &__curve {
+      &-desktop {
+        margin-bottom: -5px;
+      }
+
+      &-mobile {
+        display: none;
+      }
+    }
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+
+    &__image {
+      width: 45%;
+
+      &-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__info {
+      width: 55%;
+
+      &-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      &-description {
+        width: 77%;
+        font-weight: $med;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      &-link {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+
+        &_icon {
+          padding-top: 0.2rem;
+        }
+      }
+
+      &-testimonial {
+        width: 360px;
+        height: 220px;
+        padding: 1.75rem 2.8rem;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+
+        &_img {
+          height: 15px;
+          margin-bottom: 0.5rem;
+        }
+
+        &_text {
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+          line-height: 1.8;
+          font-weight: $med;
+        }
+
+        &_author {
+          &-avatar {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
+          }
+
+          &-namebox {
+            &_name {
+              font-size: 0.7rem;
+            }
+
+            &_role {
+              font-size: 0.55rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .access {
+    @include flexCenter;
+    padding-top: 6.5rem;
+    padding-bottom: 5rem;
+    justify-content: space-between;
+
+    &__info {
+      width: 50%;
+
+      &-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &-description {
+        font-size: 0.95rem;
+        letter-spacing: 0.02rem;
+        word-spacing: 0.2rem;
+      }
+    }
+
+    &__form {
+      width: 50%;
+      margin-left: 15rem;
+
+      &-email {
+        width: 100%;
+        padding: 1rem 0 1rem 1rem;
+        margin-bottom: 1rem;
+
+      }
+
+      &-submit {
+        width: 200px;
+        height: 50px;
+      }
+    }
+  }
+
+  .footer {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+
+    &__image {
+      margin-bottom: 1.5rem;
+
+      &-img {}
+    }
+
+    &__linksbox {
+      display: flex;
+
+      &-contactlinks {
+        width: 35%;
+
+        &_contact {
+          &-icon {
+            margin-right: 1.2rem;
+          }
+
+          &-info {}
+        }
+      }
+
+      &-navlinks {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+
+        &_start {
+          &-link {}
+        }
+
+        &_end {
+          &-link {}
+        }
+      }
+
+      &-smlinks {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+
+        &_frame {
+          margin: 0 0.4rem;
+
+          &-icon {}
+        }
+      }
+    }
+  }
+}
